@@ -71,6 +71,14 @@ const emailRouter = express.Router();
 emailRouter.post('/', emailManager.send);
 router.use('/emails', emailRouter);
 
+// -----------------------------------------------------------------------------
+// 🆕 IRL Routes (Indice de Référence des Loyers - INSEE)
+// -----------------------------------------------------------------------------
+const irlRoutes = require('./controllers/irlController');
+router.use('/irl', irlRoutes);
+// -----------------------------------------------------------------------------
+
+
 const apiRouter = express.Router();
 apiRouter.use('/api/v2', router);
 
